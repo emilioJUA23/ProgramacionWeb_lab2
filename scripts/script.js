@@ -2,10 +2,10 @@
 
 function changeFont()
 {
-    if (String(document.getElementById("page-top").style.fontFamily) == "Impact, Charcoal, sans-serif") 
+    if (String(document.getElementById("page-top").style.fontFamily) == "Impact, Charcoal, sans-serif")
     {
         document.getElementById("page-top").style.fontFamily = "Arial,Helvetica,sans-serif";
-    } 
+    }
     else
     {
         document.getElementById("page-top").style.fontFamily = "Impact,Charcoal,sans-serif";
@@ -14,10 +14,10 @@ function changeFont()
 
 function makeBold()
 {
-    if (String(document.getElementById("page-top").style.fontWeight) == "bold") 
+    if (String(document.getElementById("page-top").style.fontWeight) == "bold")
     {
         document.getElementById("page-top").style.fontWeight = 'normal';
-    } 
+    }
     else
     {
         document.getElementById("page-top").style.fontWeight = 'bold';
@@ -26,10 +26,10 @@ function makeBold()
 
 function changeBackColor()
 {
-    if (String(document.body.style.background) == "red none repeat scroll 0% 0%") 
+    if (String(document.body.style.background) == "red none repeat scroll 0% 0%")
     {
         document.body.style.background = "grey";
-    } 
+    }
     else
     {
         document.body.style.background = "red";
@@ -38,10 +38,10 @@ function changeBackColor()
 
 function changeColor()
 {
-    if (String(document.body.style.color) == "red") 
+    if (String(document.body.style.color) == "red")
     {
         document.body.style.color = "black";
-    } 
+    }
     else
     {
         document.body.style.color = "red";
@@ -59,12 +59,27 @@ function pictureChange()
     {
         document.getElementById('big_pic').src="images/eldrazi.png";
     }
-    
+
 }
 
-
+function getSum(total, num)
+{
+    return total + num;
+}
 function calculateManaCurve()
 {
-    var x = document.querySelector("#bluemana").value.type; 
-    alert(String(x));
+  // obtencion de variables
+    var blueMana = parseInt(document.querySelector("#bluemana").value);
+    var redMana = parseInt(document.querySelector("#redmana").value);
+    var greenMana = parseInt(document.querySelector("#greenmana").value);
+    var blackMana = parseInt(document.querySelector("#blackmana").value);
+    var whiteMana = parseInt(document.querySelector("#whitemana").value);
+    var lands = parseInt(document.querySelector("#lands").value);
+    var weights = [blueMana,redMana,greenMana,blackMana,whiteMana];
+    var sum = weights.reduce(getSum);
+    blueMana= (blueMana/sum)*lands;
+    redMana = (redMana/sum)*lands;
+    blackMana = (blackMana/sum)*lands;
+    whiteMana = (whiteMana/sum)*lands;
+    greenMana = (greenMana/sum)*lands;
 }
