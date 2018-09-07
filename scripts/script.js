@@ -1,4 +1,5 @@
 
+var table_of_decks = "#decktable";
 
 function changeFont()
 {
@@ -75,6 +76,7 @@ function calculateManaCurve()
     var blackMana = parseInt(document.querySelector("#blackmana").value);
     var whiteMana = parseInt(document.querySelector("#whitemana").value);
     var lands = parseInt(document.querySelector("#lands").value);
+    // calculo de pesos
     var weights = [blueMana,redMana,greenMana,blackMana,whiteMana];
     var sum = weights.reduce(getSum);
     blueMana= (blueMana/sum)*lands;
@@ -82,4 +84,20 @@ function calculateManaCurve()
     blackMana = (blackMana/sum)*lands;
     whiteMana = (whiteMana/sum)*lands;
     greenMana = (greenMana/sum)*lands;
+    return [blueMana,redMana,greenMana,blackMana,whiteMana,lands]
+}
+
+
+function insertDeck(data) {
+    var table = document.querySelector(table_of_decks);
+    var row = table.insertRow(table.querySelectorAll("tr").lenght);
+    for (var i in data)
+    {
+      var cell = row.insertCell(i);
+      cell.innerHTML = String(data[i]);
+    }
+}
+
+function myDeleteFunction() {
+    document.getElementById("myTable").deleteRow(0);
 }
