@@ -59,7 +59,3 @@ function pictureChange()
     }
 
 }
-
-function myDeleteFunction() {
-    document.getElementById("myTable").deleteRow(0);
-}

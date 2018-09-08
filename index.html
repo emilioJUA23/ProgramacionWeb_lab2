@@ -88,7 +88,7 @@
                     </div>
             </div>
             <div class="container-fluid row">
-              <table style="width:100%" id="decktable">
+              <table class="table-bordered" style="width:100%" id="decktable">
                <tr>
                  <th>Blue Mana</th>
                  <th>Red Mana</th>
@@ -98,6 +98,12 @@
                  <th>Total Lands</th>
                </tr>
               </table>
+            </div>
+            <div class="container-fluid row">
+                <div>
+                  Delete Row Number:<input type="number" id="rownumber">
+                  <button onclick="deleteSelectedDeck()" type="button" class="btn btn-primary" width="100" height="2000">Delete Deck</button>
+                </div>
             </div>
         </section>
 
@@ -118,5 +124,6 @@
 
     <script src="scripts/script.js"></script>
     <script src="scripts/insert.js"></script>
+    <script src="scripts/delete.js"></script>
 
 </html>
