@@ -1,6 +1,4 @@
 
-var table_of_decks = "#decktable";
-
 function DeleteDeck(rowNumber)
 {
     document.querySelector(table_of_decks).deleteRow(rowNumber);

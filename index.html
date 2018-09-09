@@ -67,16 +67,16 @@
                     Blue Mana: <br><input class="input" type="number" id="bluemana">
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 text-center">
-                    White Mana: <br><input type="number" id="whitemana">
+                    Red Mana: <br><input type="number" id="redmana">
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 text-center">
                     Green Mana: <br><input type="number" id="greenmana">
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 text-center">
-                    Red Mana: <br><input type="number" id="redmana">
+                    Black Mana: <br><input type="number" id="blackmana">
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 text-center">
-                    Black Mana: <br><input type="number" id="blackmana">
+                    White Mana: <br><input type="number" id="whitemana">
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 text-center">
                     Number of Lands: <br><input type="number" id="lands">
@@ -105,6 +105,13 @@
                   <button onclick="deleteSelectedDeck()" type="button" class="btn btn-primary" width="100" height="2000">Delete Deck</button>
                 </div>
             </div>
+            <div class="container-fluid row">
+                <div>
+                  Update Row Number:<input type="number" id="rownumber_update">
+                  <button onclick="updateDeck(getDeckValues())" type="button" class="btn btn-primary" width="100" height="2000">Update!</button>
+                  <button onclick="saveChanges()" type="button" class="btn btn-primary" width="100" height="2000">Save Changes</button>
+                </div>
+            </div>
         </section>
 
         <section id="dailycard" class="container-fluid img-responsive">
@@ -125,5 +132,6 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/insert.js"></script>
     <script src="scripts/delete.js"></script>
+    <script src="scripts/update.js"></script>
 
 </html>
